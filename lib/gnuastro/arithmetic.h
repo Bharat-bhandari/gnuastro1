@@ -147,6 +147,7 @@ enum gal_arithmetic_operators
   GAL_ARITHMETIC_OP_DEGREE_TO_RA, /* right ascension to decimal. */
   GAL_ARITHMETIC_OP_DEGREE_TO_DEC,/* declination to decimal. */
   GAL_ARITHMETIC_OP_COUNTS_TO_MAG,/* Counts to magnitude. */
+  GAL_ARITHMETIC_OP_ARCSECSQ_TO_PIXNUM,  /*Arcsecsq to number of pixels*/
   GAL_ARITHMETIC_OP_MAG_TO_COUNTS,/* Magnitude to counts. */
   GAL_ARITHMETIC_OP_MAG_TO_SB,    /* Magnitude to Surface Brightness. */
   GAL_ARITHMETIC_OP_SB_TO_MAG,    /* Surface Brightness to Magnitude. */

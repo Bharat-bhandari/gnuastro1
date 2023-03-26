@@ -35,6 +35,7 @@ along with Gnuastro. If not, see <http://www.gnu.org/licenses/>.
 
 #include <gnuastro/type.h>
 #include <gnuastro/pointer.h>
+#include <gnuastro/wcs.h>
 
 
 
@@ -436,6 +437,15 @@ gal_units_sb_to_counts(double sb, double zeropoint,
                    zeropoint);
 }
 
+
+double
+gal_units_arcsecsq_to_pixnum(double area_arcsec2, struct wcsprm *wcs)
+{
+
+  double ps= gal_wcs_pixel_scale(wcs);
+  
+  return area_arcsec2/ps*ps;
+}
 
 
 

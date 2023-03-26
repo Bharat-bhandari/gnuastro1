@@ -92,6 +92,9 @@ gal_units_counts_to_sb(double counts, double zeropoint,
 double
 gal_units_sb_to_counts(double sb, double zeropoint,
                        double area_arcsec2);
+                       
+double
+gal_units_arcsecsq_to_pixnum(double area_arcsec2, struct wcsprm *wcs)
 
 double
 gal_units_counts_to_jy(double counts, double zeropoint_ab);

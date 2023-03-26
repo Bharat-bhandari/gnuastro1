@@ -2446,6 +2446,8 @@ arithmetic_function_binary_flt(int operator, int flags, gal_data_t *il,
       BINFUNC_F_OPERATOR_SET( gal_units_mag_to_sb, +0 ); break;
     case GAL_ARITHMETIC_OP_COUNTS_TO_MAG:
       BINFUNC_F_OPERATOR_SET( gal_units_counts_to_mag, +0 ); break;
+    case GAL_ARITHMETIC_OP_ARCSECSQ_TO_PIXNUM:
+      BINFUNC_F_OPERATOR_SET( gal_units_arcsecsq_to_pixnum, +0 ); break;
     case GAL_ARITHMETIC_OP_MAG_TO_COUNTS:
       BINFUNC_F_OPERATOR_SET( gal_units_mag_to_counts, +0 ); break;
     case GAL_ARITHMETIC_OP_COUNTS_TO_JY:
@@ -3141,6 +3143,8 @@ gal_arithmetic_set_operator(char *string, size_t *num_operands)
     { op=GAL_ARITHMETIC_OP_DEGREE_TO_DEC;     *num_operands=1;  }
   else if (!strcmp(string, "counts-to-mag"))
     { op=GAL_ARITHMETIC_OP_COUNTS_TO_MAG;     *num_operands=2;  }
+  else if (!strcmp(string, "arcsecsq-to-pixnum"))
+    { op=GAL_ARITHMETIC_OP_ARCSECSQ_TO_PIXNUM;     *num_operands=2;  }
   else if (!strcmp(string, "mag-to-counts"))
     { op=GAL_ARITHMETIC_OP_MAG_TO_COUNTS;     *num_operands=2;  }
   else if (!strcmp(string, "sb-to-mag"))
@@ -3410,6 +3414,7 @@ gal_arithmetic_operator_string(int operator)
     case GAL_ARITHMETIC_OP_DEGREE_TO_RA:    return "degree-to-ra";
     case GAL_ARITHMETIC_OP_DEGREE_TO_DEC:   return "degree-to-dec";
     case GAL_ARITHMETIC_OP_COUNTS_TO_MAG:   return "counts-to-mag";
+    case GAL_ARITHMETIC_OP_ARCSECSQ_TO_PIXNUM:  return "arcsecsq-to-pixnum;
     case GAL_ARITHMETIC_OP_MAG_TO_COUNTS:   return "mag-to-counts";
     case GAL_ARITHMETIC_OP_SB_TO_MAG:       return "sb-to-mag";
     case GAL_ARITHMETIC_OP_MAG_TO_SB:       return "mag-to-sb";
@@ -3594,6 +3599,7 @@ gal_arithmetic(int operator, size_t numthreads, int flags, ...)
     case GAL_ARITHMETIC_OP_JY_TO_COUNTS:
     case GAL_ARITHMETIC_OP_COUNTS_TO_JY:
     case GAL_ARITHMETIC_OP_COUNTS_TO_MAG:
+    case GAL_ARITHMETIC_OP_ARCSECSQ_TO_PIXNUM:
     case GAL_ARITHMETIC_OP_MAG_TO_COUNTS:
     case GAL_ARITHMETIC_OP_NANOMAGGY_TO_COUNTS:
     case GAL_ARITHMETIC_OP_COUNTS_TO_NANOMAGGY:
